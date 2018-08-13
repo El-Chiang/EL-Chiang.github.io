@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="喵喵喵" />
 
 
 
@@ -97,13 +97,26 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Octave&#x2F;Matlab基本操作">
 <meta property="og:url" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="|喵|">
 <meta property="og:description" content="基本操作数学运算基本的加、减、乘、除、指数运算： 12345678910octave:1&amp;gt; 5+6ans =  11ocatave:1&amp;gt; 3-2ans =  1octave:3&amp;gt; 5*8ans =  40octave:4&amp;gt; 1/2ans =  0.50000octave:5&amp;gt; 2^6ans =  64">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/00.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/01.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/03.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/05.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/06.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/07.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/08.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/09.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/10.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/11.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/12.png">
+<meta property="og:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/13.png">
 <meta property="og:updated_time" content="2018-03-09T13:54:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Octave&#x2F;Matlab基本操作">
 <meta name="twitter:description" content="基本操作数学运算基本的加、减、乘、除、指数运算： 12345678910octave:1&amp;gt; 5+6ans =  11ocatave:1&amp;gt; 3-2ans =  1octave:3&amp;gt; 5*8ans =  40octave:4&amp;gt; 1/2ans =  0.50000octave:5&amp;gt; 2^6ans =  64">
+<meta name="twitter:image" content="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/00.png">
 
 
 
@@ -111,13 +124,13 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -137,7 +150,7 @@
 
 
 
-  <title>Octave/Matlab基本操作 | Hexo</title>
+  <title>Octave/Matlab基本操作 | |喵|</title>
   
 
 
@@ -155,7 +168,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -173,12 +186,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">|喵|</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">喵喵喵</p>
       
   </div>
 
@@ -203,7 +216,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -213,17 +226,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
+            归档
           </a>
         </li>
       
@@ -233,17 +236,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-photos">
-          <a href="/photos/" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            照片
+            关于
           </a>
         </li>
       
@@ -279,13 +282,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/2018-03-09-Octave-Matlab-Learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="El Chiang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="|喵|">
     </span>
 
     
@@ -303,9 +306,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-09T19:47:20+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T19:47:20+08:00">
                 2018-03-09
               </time>
             
@@ -382,10 +385,10 @@
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; w = <span class="number">-6</span> + <span class="built_in">sqrt</span>(<span class="number">10</span>)*(<span class="built_in">randn</span>(<span class="number">1</span>,<span class="number">10000</span>));</span><br></pre></td></tr></table></figure>
 <h3 id="绘制函数"><a href="#绘制函数" class="headerlink" title="绘制函数"></a>绘制函数</h3><p>绘制这个直方图：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; hist(w)</span><br></pre></td></tr></table></figure>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/00.png">
 <p>绘制有50条的直方图：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; hist(w,<span class="number">50</span>)</span><br></pre></td></tr></table></figure>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/01.png">
 <h3 id="生成单位矩阵"><a href="#生成单位矩阵" class="headerlink" title="生成单位矩阵"></a>生成单位矩阵</h3><p>生成矩阵的特殊命令：<code>eye</code> ，可用来生成单位矩阵：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; A = <span class="built_in">eye</span>(<span class="number">5</span>)</span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">Diagonal Matrix</span><br><span class="line"></span><br><span class="line">   <span class="number">1</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span>   <span class="number">1</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span>   <span class="number">0</span>   <span class="number">1</span>   <span class="number">0</span>   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">1</span>   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <h3 id="help"><a href="#help" class="headerlink" title="help"></a>help</h3><p><code>help</code>命令，后面跟任何其他指令，都可以查看该指令的说明文档，包括help自身：</p>
@@ -515,17 +518,17 @@
 </blockquote>
 <h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><h3 id="绘制正弦余弦函数"><a href="#绘制正弦余弦函数" class="headerlink" title="绘制正弦余弦函数"></a>绘制正弦余弦函数</h3><p>绘制一个正弦函数：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; t=[<span class="number">0</span>:<span class="number">0.01</span>:<span class="number">0.98</span>];	<span class="comment">% 生成一个0到0.98的等差数列，差值为0.01</span></span><br><span class="line">&gt;&gt; y1 = <span class="built_in">sin</span>(<span class="number">8</span>*<span class="built_in">pi</span>*t)</span><br><span class="line">&gt;&gt; plot(t,y1);</span><br></pre></td></tr></table></figure>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/03.png">
 <p>同理，可以绘制余弦图：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; y2 = <span class="built_in">cos</span>(<span class="number">8</span>*<span class="built_in">pi</span>*t);</span><br><span class="line">&gt;&gt; plot(t,y2)</span><br></pre></td></tr></table></figure>
 <p>这样会覆盖掉之前的图，得到新的图：</p>
 <p>{&amp; asset_img 04.png %}</p>
 <p>如果我们想将两个图重叠在一起绘制，可以使用<code>hold on</code>命令：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; plot(t,y1);</span><br><span class="line">&gt;&gt; hold on</span><br><span class="line">&gt;&gt; plot(t,y2,<span class="string">'r'</span>);	<span class="comment">%  这里第三个参数'r'代表颜色为红色</span></span><br></pre></td></tr></table></figure>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/05.png">
 <h3 id="图的标记"><a href="#图的标记" class="headerlink" title="图的标记"></a>图的标记</h3><p>可以用以下命令来对图进行标记：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; xlabel(<span class="string">'time'</span>)	<span class="comment">%	标记x坐标</span></span><br><span class="line">&gt;&gt; ylabel(<span class="string">'value'</span>)	<span class="comment">%	标记y坐标</span></span><br><span class="line">&gt;&gt; legend(<span class="string">'sin'</span>,<span class="string">'cos'</span>)	<span class="comment">%	标记图例</span></span><br><span class="line">&gt;&gt; title(<span class="string">'my plot'</span>)	<span class="comment">%	标记标题</span></span><br></pre></td></tr></table></figure>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/06.png">
 <h3 id="图片的保存于删除"><a href="#图片的保存于删除" class="headerlink" title="图片的保存于删除"></a>图片的保存于删除</h3><p>将图片保存在Octave所在目录。可能会花费一些时间</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; print -dpng <span class="string">'myPlot.png'</span></span><br><span class="line">warning: print.m: fig2dev binary is not available.</span><br><span class="line">Some output formats are not available.</span><br></pre></td></tr></table></figure>
 <p>这里其实可以保存多种格式，可以查看<code>help</code>来了解。</p>
@@ -534,33 +537,33 @@
 <p>这样就会关闭视图窗口，并且删除刚才生成的文件。</p>
 <h3 id="为图像标号"><a href="#为图像标号" class="headerlink" title="为图像标号"></a>为图像标号</h3><p>可以通过<code>figure</code>函数对图像进行标号：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; figure(<span class="number">1</span>);plot(t,y1);</span><br></pre></td></tr></table></figure>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/07.png">
 <h3 id="使用subplot将图像分割显示"><a href="#使用subplot将图像分割显示" class="headerlink" title="使用subplot将图像分割显示"></a>使用subplot将图像分割显示</h3><p><code>subplot</code>函数接受三个参数，前两个参数代表获取一个a × b格子，第三个参数代表当前使用的格子的索引。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>); <span class="comment">% 将图像划分成1×2的格子，并且使用第一个格子</span></span><br></pre></td></tr></table></figure>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/08.png">
 <p>如果这个时候输入:</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; plot(t,y1);</span><br></pre></td></tr></table></figure>
 <p>那么将会绘制在第一个格子里：</p>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/09.png">
 <p>同理，我们可以通过以下命令，将<code>y2</code>绘制在第二个格子里：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>);</span><br><span class="line">&gt;&gt; plot(t,y2);</span><br></pre></td></tr></table></figure>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/10.png">
 <p>另外，可以使用<code>axis</code>函数，来改变当前图像的刻度：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; axis([<span class="number">0.5</span> <span class="number">1</span> <span class="number">-1</span> <span class="number">1</span>])	<span class="comment">% 将x轴的范围调整到0.5到1之间，y轴的范围调整到-1到1之间</span></span><br></pre></td></tr></table></figure>
 <p>可以看到<code>y2</code>对应的图刻度发生了改变：</p>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/11.png">
 <p>如果想清空图像，可以使用<code>clf</code></p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; clf;</span><br></pre></td></tr></table></figure>
 <h3 id="矩阵的可视化"><a href="#矩阵的可视化" class="headerlink" title="矩阵的可视化"></a>矩阵的可视化</h3><p>通过<code>imagesc</code>函数，将矩阵绘制出来，其中一种颜色代表一种数值。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; A = <span class="built_in">magic</span>(<span class="number">5</span>)</span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">   <span class="number">17</span>   <span class="number">24</span>    <span class="number">1</span>    <span class="number">8</span>   <span class="number">15</span></span><br><span class="line">   <span class="number">23</span>    <span class="number">5</span>    <span class="number">7</span>   <span class="number">14</span>   <span class="number">16</span></span><br><span class="line">    <span class="number">4</span>    <span class="number">6</span>   <span class="number">13</span>   <span class="number">20</span>   <span class="number">22</span></span><br><span class="line">   <span class="number">10</span>   <span class="number">12</span>   <span class="number">19</span>   <span class="number">21</span>    <span class="number">3</span></span><br><span class="line">   <span class="number">11</span>   <span class="number">18</span>   <span class="number">25</span>    <span class="number">2</span>    <span class="number">9</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; imagesc(A)</span><br></pre></td></tr></table></figure>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/12.png">
 <p>设置用来显示的颜色：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; imagesc(A), colorbar, colormap gray;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这里其实相当于连续输入了三条命令。</p>
 </blockquote>
 <p>可以看到，颜色变为了灰色，并且颜色对应的数值范围也在右侧列出：</p>
-
+<img src="/2018/03/09/2018-03-09-Octave-Matlab-Learning/13.png">
 <h2 id="控制语句：for-while-if符号的使用"><a href="#控制语句：for-while-if符号的使用" class="headerlink" title="控制语句：for, while, if符号的使用"></a>控制语句：for, while, if符号的使用</h2><h3 id="for语句的使用"><a href="#for语句的使用" class="headerlink" title="for语句的使用"></a>for语句的使用</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; v = <span class="built_in">zeros</span>(<span class="number">10</span>,<span class="number">1</span>)</span><br><span class="line">v =</span><br><span class="line"></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line">   <span class="number">0</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">10</span>,</span><br><span class="line">&gt;    v(<span class="built_in">i</span>) = <span class="number">2</span>^<span class="built_in">i</span>;</span><br><span class="line">&gt;  <span class="keyword">end</span>;</span><br><span class="line">&gt;&gt; v</span><br><span class="line">v =</span><br><span class="line"></span><br><span class="line">      <span class="number">2</span></span><br><span class="line">      <span class="number">4</span></span><br><span class="line">      <span class="number">8</span></span><br><span class="line">     <span class="number">16</span></span><br><span class="line">     <span class="number">32</span></span><br><span class="line">     <span class="number">64</span></span><br><span class="line">    <span class="number">128</span></span><br><span class="line">    <span class="number">256</span></span><br><span class="line">    <span class="number">512</span></span><br><span class="line">   <span class="number">1024</span></span><br></pre></td></tr></table></figure>
 <p>也可以通过<code>for</code>来访问一个索引序列：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; indices=<span class="number">1</span>:<span class="number">10</span>;</span><br><span class="line">&gt;&gt; indices</span><br><span class="line">indices =</span><br><span class="line"></span><br><span class="line">    <span class="number">1</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>    <span class="number">5</span>    <span class="number">6</span>    <span class="number">7</span>    <span class="number">8</span>    <span class="number">9</span>   <span class="number">10</span></span><br><span class="line"></span><br><span class="line">&gt;&gt; <span class="keyword">for</span> <span class="built_in">i</span>=indices,</span><br><span class="line">&gt;    <span class="built_in">disp</span>(<span class="built_in">i</span>);</span><br><span class="line">&gt;  <span class="keyword">end</span>;</span><br><span class="line"> <span class="number">1</span></span><br><span class="line"> <span class="number">2</span></span><br><span class="line"> <span class="number">3</span></span><br><span class="line"> <span class="number">4</span></span><br><span class="line"> <span class="number">5</span></span><br><span class="line"> <span class="number">6</span></span><br><span class="line"> <span class="number">7</span></span><br><span class="line"> <span class="number">8</span></span><br><span class="line"> <span class="number">9</span></span><br><span class="line"> <span class="number">10</span></span><br></pre></td></tr></table></figure>
@@ -685,10 +688,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -697,10 +700,10 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head.jpg"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="El Chiang" />
+          <p class="site-author-name" itemprop="name">El Chiang</p>
            
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">超级好奇</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -709,7 +712,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">16</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -720,10 +723,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">tags</span>
-              
+                <span class="site-state-item-name">标签</span>
+              </a>
             </div>
           
 
@@ -803,20 +806,9 @@
   <span class="with-love">
     <i class="fa fa-paw"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">El Chiang</span>
 </div>
 
-
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
-
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
 
 
         
@@ -853,8 +845,6 @@
   
 
 
-  
-
 
 
 
@@ -882,9 +872,6 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   

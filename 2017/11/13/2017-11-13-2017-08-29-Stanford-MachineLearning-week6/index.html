@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -98,13 +98,19 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="斯坦福机器学习 第六周">
 <meta property="og:url" content="http://yoursite.com/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="|喵|">
 <meta property="og:description" content="(1) 评价一个学习算法如何少走弯路？以预测房价为例： 假如在预测房价的例子中，你已经完成了正则化线性回归，也就是最小化代价函数$J$的值。  假如在你得到你的学习参数以后，如果你要将你的假设函数放到一组新的房屋样本上进行测试，假如说你发现在预测房价时产生了巨大的误差，现在的问题是要想改进这个算法接下来该怎么办？ 实际上你可以想出很多方法来改进这个算法的性能。 通常情况下我们会使用这几种方法：">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/001.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/002.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/003.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/004.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/006.jpg">
 <meta property="og:updated_time" content="2017-11-17T18:01:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="斯坦福机器学习 第六周">
 <meta name="twitter:description" content="(1) 评价一个学习算法如何少走弯路？以预测房价为例： 假如在预测房价的例子中，你已经完成了正则化线性回归，也就是最小化代价函数$J$的值。  假如在你得到你的学习参数以后，如果你要将你的假设函数放到一组新的房屋样本上进行测试，假如说你发现在预测房价时产生了巨大的误差，现在的问题是要想改进这个算法接下来该怎么办？ 实际上你可以想出很多方法来改进这个算法的性能。 通常情况下我们会使用这几种方法：">
+<meta name="twitter:image" content="http://yoursite.com/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/001.jpg">
 
 
 
@@ -112,13 +118,13 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Mist',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -138,7 +144,7 @@
 
 
 
-  <title>斯坦福机器学习 第六周 | Hexo</title>
+  <title>斯坦福机器学习 第六周 | |喵|</title>
   
 
 
@@ -156,7 +162,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -174,12 +180,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">|喵|</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">喵喵喵</p>
       
   </div>
 
@@ -204,7 +210,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
           </a>
         </li>
       
@@ -214,17 +220,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
+            归档
           </a>
         </li>
       
@@ -234,17 +230,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-photos">
-          <a href="/photos/" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            照片
+            关于
           </a>
         </li>
       
@@ -280,13 +276,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="El Chiang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/head.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="|喵|">
     </span>
 
     
@@ -304,9 +300,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-13T19:44:20+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T19:44:20+08:00">
                 2017-11-13
               </time>
             
@@ -343,7 +339,7 @@
       
         <h2 id="1-评价一个学习算法"><a href="#1-评价一个学习算法" class="headerlink" title="(1) 评价一个学习算法"></a>(1) 评价一个学习算法</h2><h3 id="如何少走弯路？"><a href="#如何少走弯路？" class="headerlink" title="如何少走弯路？"></a>如何少走弯路？</h3><p>以预测房价为例：</p>
 <p>假如在预测房价的例子中，你已经完成了正则化线性回归，也就是最小化代价函数$J$的值。</p>
-
+<img src="/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/001.jpg">
 <p>假如在你得到你的学习参数以后，如果你要将你的假设函数放到一组新的房屋样本上进行测试，假如说你发现在预测房价时产生了巨大的误差，现在的问题是要想改进这个算法接下来该怎么办？</p>
 <p>实际上你可以想出很多方法来改进这个算法的性能。</p>
 <p>通常情况下我们会使用这几种方法：</p>
@@ -379,14 +375,14 @@
 <p>诊断法是一种很有用的方法，可以更有效率地利用好你的时间，但同时也会花费一些时间来实现。</p>
 <h4 id="评估假设函数"><a href="#评估假设函数" class="headerlink" title="评估假设函数"></a>评估假设函数</h4><p>当我们确定学习算法的参数的时候，我们考虑的是选择参量来使训练误差最小化。有人认为，得到一个非常小的训练误差一定是一件好事，但我们已经知道，仅仅是因为这个假设具有很小的训练误差并不能说明它就一定是一个好的假设函数，而且我们也学习了过拟合假设函数的例子。所以这推广到新的训练集上是不适用的。</p>
 <p>那么，你该如何判断一个假设函数是过拟合的呢？对于这个简单的例子，我们可以对假设函数$h(x)$进行画图，然后观察图形趋势：</p>
-
+<img src="/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/002.jpg">
 <p>但对于特征变量不止一个的这种一般情况：</p>
-
+<img src="/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/003.jpg">
 <p>想要通过画出假设函数来进行观察，就会变得很难甚至是不可能实现的。</p>
 <p>因此我们需要另一种方法来评估我们的假设函数。</p>
 <h4 id="评估假设函数的方法"><a href="#评估假设函数的方法" class="headerlink" title="评估假设函数的方法"></a>评估假设函数的方法</h4><p>如下给出了一种评估假设函数的标准方法：</p>
 <p>假设我们有这样一组数据组：</p>
-
+<img src="/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/004.jpg">
 <p>虽然这里只有十组数据，但通常情况下我们都有成百上千组训练样本。</p>
 <p>为了确保我们可以评估我们的假设函数，我们要做的是将这些数据进行三七分：</p>
 <p>第一部分（70%）将成为我们的<strong>训练集(Training Set)</strong></p>
@@ -423,7 +419,7 @@
 <li>首先我们要从训练数据中（前70%）学习得到参数θθ</li>
 <li>然后用下面的式子计算测试数据的误差值:</li>
 </ol>
-
+<img src="/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/006.jpg">
 <p>在分类问题中的测试误差$J_{test}(θ)$其实也被称作<strong>误分类率</strong>（也被称为<strong>0/1错分率</strong>）。表示你预测到的正确或错误样本的情况。</p>
 <p>比如说可以这样定义一次预测的误差：</p>
 <ul>
@@ -536,10 +532,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -548,10 +544,10 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head.jpg"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="El Chiang" />
+          <p class="site-author-name" itemprop="name">El Chiang</p>
            
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">超级好奇</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -560,7 +556,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">16</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -571,10 +567,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
+              <a href="/tags/index.html">
                 <span class="site-state-item-count">10</span>
-                <span class="site-state-item-name">tags</span>
-              
+                <span class="site-state-item-name">标签</span>
+              </a>
             </div>
           
 
@@ -654,20 +650,9 @@
   <span class="with-love">
     <i class="fa fa-paw"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">El Chiang</span>
 </div>
 
-
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
-
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
 
 
         
@@ -704,8 +689,6 @@
   
 
 
-  
-
 
 
 
@@ -733,9 +716,6 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
