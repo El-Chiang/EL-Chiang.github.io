@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Machine Learning," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="(1) 训练神经网络代价函数 接下来介绍一种在给定训练集下为神经网络拟合参数的学习算法。我们从拟合神经网络参数的代价函数开始讲起  以神经网络在分类问题中的应用为例：">
+<meta name="keywords" content="Machine Learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="斯坦福机器学习课程 第五周">
+<meta property="og:url" content="http://yoursite.com/2017/08/29/2017-08-29-Stanford-MachineLearning-week5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="(1) 训练神经网络代价函数 接下来介绍一种在给定训练集下为神经网络拟合参数的学习算法。我们从拟合神经网络参数的代价函数开始讲起  以神经网络在分类问题中的应用为例：">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-11-13T11:42:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="斯坦福机器学习课程 第五周">
+<meta name="twitter:description" content="(1) 训练神经网络代价函数 接下来介绍一种在给定训练集下为神经网络拟合参数的学习算法。我们从拟合神经网络参数的代价函数开始讲起  以神经网络在分类问题中的应用为例：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/29/2017-08-29-Stanford-MachineLearning-week5/"/>
+
+
+
+
+
+  <title>斯坦福机器学习课程 第五周 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photos">
+          <a href="/photos/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            照片
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/2017-08-29-Stanford-MachineLearning-week5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">斯坦福机器学习课程 第五周</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T16:23:59+08:00">
+                2017-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-训练神经网络"><a href="#1-训练神经网络" class="headerlink" title="(1) 训练神经网络"></a>(1) 训练神经网络</h2><h3 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h3><blockquote>
+<p>接下来介绍一种在给定训练集下为神经网络拟合参数的学习算法。我们从拟合神经网络参数的代价函数开始讲起</p>
+</blockquote>
+<p>以神经网络在分类问题中的应用为例：</p>
+
+<a id="more"></a>
+<p>假设我们有一个如上图所示的神经网络结构，然后假设我们有一个这样的训练集：<br>$$<br>(x^{(1)}, y^{(1)}), (x^{(2)}, y^{(2)}), …, (x^{(m)}, y^{(m)})<br>$$<br>一共有m个训练样本$$(x^{(i)}, y^{(i)})$$。</p>
+<p>用大写字母$L$表示这个神经网络结构的总层数：<br>$$<br>L = total~no.~of~layers~in~networks(神经网络总层数)<br>$$<br>所以我们得到$L = 4$。</p>
+<p>然后，我们用$S_l​$表示第​$l​$层的神经元的数量，<strong>这其中不包括L层的偏执单元</strong>：</p>
+<ul>
+<li>$S_l = 3(也就是输入层)$</li>
+<li>$S_2 = 5$</li>
+<li>$S_3 = 5$</li>
+<li>$S_4 = S_l = 4(因为L=4)$</li>
+</ul>
+<p>接下来讨论两种分类问题，分别是<strong>二元分类</strong>和<strong>多类别分类</strong>。</p>
+<h4 id="二元分类-Binary-classification"><a href="#二元分类-Binary-classification" class="headerlink" title="二元分类(Binary classification)"></a>二元分类(Binary classification)</h4><p>在二元分类中$y$只能是0或1：<br>$$<br>y = 0~or~1<br>$$<br>在这个例子中，我们有一个输出单元（不同于上面的神经网络有4个输出单元）。神经网络的输出会是一个实数：<br>$$<br>h_\Theta(x) \in \mathbb{R}<br>$$<br>输出单元的个数：<br>$$<br>S_L = 1<br>$$</p>
+<blockquote>
+<p>在这类问题里，为了简化记法，我们把$K$设为1，这样就可以把$K$看作输出层的单元数目。</p>
+</blockquote>
+<h4 id="多类别分类-Multi-class-classification"><a href="#多类别分类-Multi-class-classification" class="headerlink" title="多类别分类(Multi-class classification)"></a>多类别分类(Multi-class classification)</h4><p>在多类别分类问题中，会有$K$个不同的类，比如说如果我们有四类的话，我们就用下面这种表达形式来代表$y$。在这类问题里，我们就会有$K$个输出单元。</p>
+
+<p>我们的输出假设就是一个$K$维向量：<br>$$<br>h_\Theta(x) \in \mathbb{R}^K<br>$$<br>输出单元的个数就是$K$：<br>$$<br>S_L = K<br>$$</p>
+<h4 id="定义代价函数"><a href="#定义代价函数" class="headerlink" title="定义代价函数"></a>定义代价函数</h4><p>我们在神经网络里，使用的代价函数，应该是逻辑回归里使用的代价函数的一般形式。</p>
+<p><strong>逻辑回归的代价函数：</strong><br>$$<br>J(\theta) = -\frac{1}{m}[\sum_{i=1}^my^{(i)}logh_\theta(x^{(i)}) + (1 - y^{(i)})log(1 - h_\theta(x^{(i)}))] + \frac{\lambda}{2m}\sum_{j=1}^n\theta_j^2<br>$$<br>其中$\frac{\lambda}{2m}\sum_{j=1}^n\theta_j^2$这一项是个额外的正则化项，是一个$j$从1到$n$的求和形式。因为我们并没有把偏置项0正则化。</p>
+<p>对于神经网络，我们使用的代价函数是这个例子的一般化形式。<br>$$<br>J(\Theta) = -\frac{1}{m}[\sum_{i=1}^m \sum_{k=1}^K y^{(i)}log(h_\Theta(x^{(i)})_k + (1 - y^{(i)})<em>k)log(1 - h</em>\Theta(x^{(i)}))<em>k] + \frac{\lambda}{2m} \sum</em>{l=1}^{L-1} \sum_{i=1}^{S_l} \sum_{j=1}^{S_{l+1}}(\Theta_{ji}^{(l)})^2<br>$$<br>神经网络现在输出了在$K$维的向量$h_\Theta(x)$：<br>$$<br>h_\Theta(x) \in \mathbb{R}^K<br>$$<br>用$(h_\Theta(x))_i$来表示第$i$个输出。</p>
+<p>其中$\sum_{k=1}^K$这个求和项是$K$个输出单元的求和，比如你有4个输出单元在神经网络的最后一层，那么这个求和项就是$k$从1到4所对应的每一个逻辑回归算法的代价函数之和。</p>
+<p>最后式子中的这一项$ \frac{\lambda}{2m} \sum_{l=1}^{L-1} \sum_{i=1}^{S_l} \sum_{j=1}^{S_{l+1}}(\Theta_{ji}^{(l)})$类似于我们在逻辑回归里所用的正则化项，它所做的就是把这些项全部加起来，也就是对所有的$\Theta_{ji}^{(l)}$的值都相加。正如我们在逻辑回归里的一样，这里要除去那些对应于偏差值的项。</p>
+<h3 id="反向传播-B-P"><a href="#反向传播-B-P" class="headerlink" title="反向传播(B-P)"></a>反向传播(B-P)</h3><p>下面是上面写好的代价函数：</p>
+
+<p>我们要做的就是试图找到代价函数$J(\Theta)$最小的$\Theta$值：<br>$$<br>min~J(\Theta)<br>$$<br>为了使用梯度下降法，我们需要做的就是写好一个通过输入参数$\Theta$，然后计算：<br>$$<br>\begin{align}<br>&amp;  J(\Theta) \<br>&amp; \frac{\alpha}{\alpha\Theta_{ij}^{(l)}}J(\Theta)<br>\end{align}<br>$$<br>下面将会讲解如何计算这两项。</p>
+<hr>
+<p><strong>梯度下降计算</strong></p>
+
+<p>接下来，为了计算导数项，我们将采用一种叫做<strong>反向传播(Backpropagation)</strong>的算法。</p>
+<p>反向传播算法从直观上说就是堆每一个节点求下面这一个误差项：<br>$$<br>\delta_j^{(l)} = \text{“error” of node}~j ~ \text{in layer}~l.<br>$$</p>
+<blockquote>
+<p>$\delta_j^{(l)}$这种形式代表了第$l$层的第$j$个结点的<strong>误差</strong>。</p>
+</blockquote>
+<p>具体来讲，用上面那个四层的神经网络结构做例子：</p>
+<p>每一项的输出单元(layer L = 4)<br>$$<br>\delta_j^{(4)} = a_j^{(4)} - y_j<br>$$</p>
+<blockquote>
+<p>对于每一个输出单元，我们准备计算$\delta$项，所以第四层的第$j$个单元的$\delta$就等于<strong>这个单元的激励值减去训练样本里的真实值</strong>。所以$a_j^{(4)}$这一项同样可以写成$h_\Theta(x)_j$：</p>
+</blockquote>
+<p>$$<br>\delta_j^{(4)} = h_\Theta(x)_j - y_j<br>$$</p>
+<p>另外，如果把$\delta$、$a$和$y$这三项都看作向量的话，那么上面的式子也可以向量化：<br>$$<br>\delta^{(4)} = a^{(4)}-y<br>$$<br>这里的$\delta^{(4)}$、$a^{(4)}$和$y$都是一个向量，并且向量维数等于输出单元的数目。</p>
+<p>所以现在计算出网络结构的误差项$\delta^{(4)}$，下一步就是计算网络中前面几层的误差项$\delta$。</p>
+<p>这就是$\delta^{(3)}$的计算公式：<br>$$<br>\delta^{(3)} = (\Theta^{(3)})^T\delta^{(4)}.*g’(z^{(3)})<br>$$</p>
+<p>很容易$g’(z^{(3)})$这一项的值是：<br>$$<br>a^{(3)}.*(1-a^{(3)})<br>$$</p>
+<blockquote>
+<p>这里的1是元素都为1的向量。</p>
+</blockquote>
+<p>接下来可以应用一个相似的公式来求得$\delta^{(2)}$：<br>$$<br>\delta^{(2)} = (\Theta^{(2)})^T\delta^{(3)}.*g’(z^{(2)})<br>$$<br>值得注意的是，这里我们没有$\delta^{(1)}$项，因为第一层是输入层，不存在误差。所以在这个例子中，我们的$\delta$项就只有第二层和第三层。</p>
+<hr>
+<p>反向传播法这个名字源于我们从输出层开始计算$\delta$项，然后再往前计算。</p>
+<p>所以我们是类似于把输出层的误差反响传播给了第三层，然后再传到第二层。这就是反向传播的意思。</p>
+<p>如果忽略标准化所产生的项，我们可以证明我们想要的偏导项恰好就是下面这个表达式：<br>$$<br>\frac{\alpha}{\alpha\Theta_{ij}^{(l)}}J(\Theta) = a_j^{(l)}\delta_i^{(l+1)} \<br>(ignore~\lambda;~if~\lambda = 0)<br>$$</p>
+<blockquote>
+<p>这里暂时忽略了$\lambda$，在之后将会完善这一个关于正则化项。</p>
+</blockquote>
+<p>到现在，我们通过反向传播计算这些$\delta$项，可以非常快速的计算出所有参数的偏导数项。</p>
+<hr>
+<p><strong>总结</strong></p>
+<p>假设我们有m个样本的训练集：</p>
+<p>$Training~set~(x^{(1)},y^{(1)}),…, (x^{(m)}, y^{(m)})$</p>
+<p>首先初始化这些值：<br>$$<br>\Delta_{ij}^{(l)} = 0~(\text{for all}~l,i,j)<br>$$</p>
+<blockquote>
+<p>这里的$\Delta_{ij}^{(l)}$将被用来计算偏导数项$\frac{\alpha}{\alpha\Theta_{ij}^{(l)}}J(\Theta)$</p>
+<p>所以这些$\Delta_{ij}^{(l)}$将被作为累加项，慢慢增加，以计算出这些偏导数。</p>
+</blockquote>
+<p>接下来要执行的操作是：</p>
+
+<p>在这里将遍历我们的训练集。</p>
+<p>我们要做的第一件事就是设定$a^{(1)}$</p>
+<p>接下来运用正向传播，计算第2，3，4，…，L层的激励值$a^l$</p>
+<p>接下来用$y^{(i)}$来计算$\delta^{(L)} = a^{(L)} - y^{(i)}$</p>
+<p>再接下来，使用反向传播算法来计算$\delta^{(L-1)},\delta^{(L-2)},…\delta^{(2)}$</p>
+<p>最终，用$\Delta_{ij}^{(i)}$来积累前面写好的偏导数项：<br>$$<br>\Delta_{ij}^{(l)} := \Delta_ij^{(l)} + a_j^{(l)}\delta_i^{(l+1)}<br>$$<br>上面这个表达式也可以写成向量形式：</p>
+<p>具体来说，如果把$\Delta$看作一个矩阵，$ij$代表矩阵中的位置，那么上面的式子就可以写成：<br>$$<br>\Delta^{(l)} := \Delta^{(l)} + \delta^{(l+1)}(a^{(l)})^T<br>$$<br>最后，执行这个for循环体之后我们跳出这个循环，然后计算下面这些式子：<br>$$<br>D_{ij}^{(l)} := \frac{1}{m}\Delta_{ij}^{(l)} + \lambda\Theta_{ij}^{(l)}~(if~j\ne0) \<br>D_{ij}^{(l)} := \frac{1}{m}\Delta_{ij}^{(l)}~(if~j = 0)<br>$$</p>
+<blockquote>
+<p>这里分$j \ne 0$和$j = 0$两种情况来讨论，在$j = 0$的情况下对应的是偏差项，所以这也是为什么在$j=0$的情况下没有写额外的标准化的原因。</p>
+</blockquote>
+<p>最后，尽管严格证明很复杂，但是一旦计算出这些值，这就正好是代价函数关于每一个参数的偏导数：<br>$$<br>\frac{\alpha}{\alpha\Theta_{ij}^{(l)}}J(\Theta) = D_{ij}^{(l)}<br>$$<br>所以，你可以把它用在梯度下降算法，或者其他更高级的算法中。</p>
+<h3 id="反向传播算法的直观介绍"><a href="#反向传播算法的直观介绍" class="headerlink" title="反向传播算法的直观介绍"></a>反向传播算法的直观介绍</h3><h4 id="距离说明神经网络计算过程"><a href="#距离说明神经网络计算过程" class="headerlink" title="距离说明神经网络计算过程"></a>距离说明神经网络计算过程</h4><p>为了更好地理解反向传播算法，先仔细研究一下向前传播的原理。</p>
+
+<p>这里有一个包含两个输入单元（不包含偏差单元）的神经网络，在第二层有两个隐藏单元（不包含偏差单元），第三层也有两个隐藏单元（不包含偏差单元），最后一层有一个输出单元。</p>
+<h4 id="向前传播"><a href="#向前传播" class="headerlink" title="向前传播"></a>向前传播</h4><p>下图展示了这个神经网络<strong>向前传播</strong>的运算过程：</p>
+
+<p>事实上，<strong>反向传播</strong>算法的运算过程非常类似于此，只有计算方向不同而已。</p>
+<h4 id="代价函数-1"><a href="#代价函数-1" class="headerlink" title="代价函数"></a>代价函数</h4><p>为了更好的理解反向传播算法的原理，我们把目光转向代价函数：</p>
+
+<p>这个代价函数对应的情况是只有一个输出单元，如果我们有不止一个输出单元的话，只需要对所有的输出单元进行一次求和运算。</p>
+<p>注意这种只有一个输出单元的情况，如果不考虑正则化即$\lambda=0$，因此最后的正则化项就没有了。</p>
+
+<p>这个求和运算括号里面与第i个训练样本对应的代价项，也就是说$(x^{(i)}, y^{(i)})$ 对应的代价项，将有下面这个式子决定：<br>$$<br>cost(i) = y{(i)}logh_\Theta(x^{(i)})+(1-y^{(i)})logh_\Theta(x^{(i)})<br>$$<br>而这个代价函数所扮演的角色可以看做是平方误差，也可以把$cost(i)$ 想象成：<br>$$<br>cost(i) \approx (h_\Theta(x^{(i)}) - y^{(i)})^2<br>$$<br>因此，这里的$cost(i)$表征了该神经网络是否能准确地预测样本$i$的值，也就是输出值和实际观测值$y^{(i)}$的接近程度。</p>
+<h4 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h4><p>现在我们来看看反向传播是怎么做的。</p>
+<p>一种直观的理解是反向传播就是在计算所有这些$\delta$项：<br>$$<br>\delta_j^{(l)} = “error” ~of~ cost~ for ~a_j^{(l)}~(unit~j~in~layer~l)<br>$$<br>并且我们可以把它们看做是这些激励值的<strong>“误差”</strong>（）</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/17/2017-08-17-Stanford-MachineLearning-week4/" rel="next" title="斯坦福机器学习课程 第四周">
+                <i class="fa fa-chevron-left"></i> 斯坦福机器学习课程 第四周
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/03/2017-09-03-小米路由器3折腾记录/" rel="prev" title="小米路由器3折腾记录">
+                小米路由器3折腾记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head.jpg"
+               alt="John Doe" />
+          <p class="site-author-name" itemprop="name">John Doe</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/El-Chiang" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/5096104875?refer_flag=1005055010_&is_all=1" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-训练神经网络"><span class="nav-number">1.</span> <span class="nav-text">(1) 训练神经网络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代价函数"><span class="nav-number">1.1.</span> <span class="nav-text">代价函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二元分类-Binary-classification"><span class="nav-number">1.1.1.</span> <span class="nav-text">二元分类(Binary classification)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多类别分类-Multi-class-classification"><span class="nav-number">1.1.2.</span> <span class="nav-text">多类别分类(Multi-class classification)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义代价函数"><span class="nav-number">1.1.3.</span> <span class="nav-text">定义代价函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播-B-P"><span class="nav-number">1.2.</span> <span class="nav-text">反向传播(B-P)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向传播算法的直观介绍"><span class="nav-number">1.3.</span> <span class="nav-text">反向传播算法的直观介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#距离说明神经网络计算过程"><span class="nav-number">1.3.1.</span> <span class="nav-text">距离说明神经网络计算过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向前传播"><span class="nav-number">1.3.2.</span> <span class="nav-text">向前传播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数-1"><span class="nav-number">1.3.3.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反向传播"><span class="nav-number">1.3.4.</span> <span class="nav-text">反向传播</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 - 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-paw"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
