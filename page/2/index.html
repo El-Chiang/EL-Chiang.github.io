@@ -267,7 +267,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/2017-08-07-Octave-LinearRegression/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/Stanford-MachineLearning-week4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="El Chiang">
@@ -286,7 +286,125 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/07/2017-08-07-Octave-LinearRegression/" itemprop="url">Octave实现线性回归模型</a></h1>
+                <a class="post-title-link" href="/2017/08/17/Stanford-MachineLearning-week4/" itemprop="url">斯坦福机器学习课程 第四周</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T17:49:29+08:00">
+                2017-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          (1) 神经网络神经网络的表示Ⅰ神经网络起源神经网络是在模拟大脑中的神经元时发明的。神经元是大脑中的细胞，神经元有一个细胞主体(Cell body)，有一定数量的输入神经，这些输入神经叫做树突(Dendrite)。可以把它们想象成输入电线，它们接收来自其他神经元的信息。神经元的输出神经叫做轴突(Ax
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/17/Stanford-MachineLearning-week4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/Octave-LinearRegression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="El Chiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="|喵|">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/07/Octave-LinearRegression/" itemprop="url">Octave实现线性回归模型</a></h1>
         
 
         <div class="post-meta">
@@ -348,7 +466,7 @@
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">J</span> = <span class="title">computeCost</span><span class="params">(X, y, theta)</span></span></span><br><span class="line">    m = <span class="built_in">length</span>(y);</span><br><span class="line">    predictions = sum(X * theta);  <span class="comment">% 假设函数在所有样本数据上进行预测</span></span><br><span class="line">    sqrErrors = (predictions - y).^<span class="number">2</span>;</span><br><span class="line">    <span class="comment">% J = 1/(2*m) * sum(sqrErrors);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">% 另一种求解方法：向量化</span></span><br><span class="line">    J = <span class="number">1</span>/(<span class="number">2</span> * m) * (X * theta - y)' * (X * theta - y);</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/07/2017-08-07-Octave-LinearRegression/#more" rel="contents">
+            <a class="btn" href="/2017/08/07/Octave-LinearRegression/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -394,7 +512,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/05/2017-08-05-Stanford-MachineLearning-week3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/05/Stanford-MachineLearning-week3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="El Chiang">
@@ -413,7 +531,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/05/2017-08-05-Stanford-MachineLearning-week3/" itemprop="url">斯坦福机器学习课程 第三周</a></h1>
+                <a class="post-title-link" href="/2017/08/05/Stanford-MachineLearning-week3/" itemprop="url">斯坦福机器学习课程 第三周</a></h1>
         
 
         <div class="post-meta">
@@ -468,7 +586,7 @@
 <li>肿瘤分类问题：区分肿瘤是恶性还是良性
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/05/2017-08-05-Stanford-MachineLearning-week3/#more" rel="contents">
+            <a class="btn" href="/2017/08/05/Stanford-MachineLearning-week3/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -514,7 +632,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/2017-08-04-Stanford-MachineLearning-week2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/Stanford-MachineLearning-week2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="El Chiang">
@@ -533,7 +651,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/04/2017-08-04-Stanford-MachineLearning-week2/" itemprop="url">斯坦福机器学习课程 第二周</a></h1>
+                <a class="post-title-link" href="/2017/08/04/Stanford-MachineLearning-week2/" itemprop="url">斯坦福机器学习课程 第二周</a></h1>
         
 
         <div class="post-meta">
@@ -586,7 +704,7 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/04/2017-08-04-Stanford-MachineLearning-week2/#more" rel="contents">
+            <a class="btn" href="/2017/08/04/Stanford-MachineLearning-week2/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -632,7 +750,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/2017-08-03-Stanford-MachineLearning-week1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/Stanford-MachineLearning-week1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="El Chiang">
@@ -651,7 +769,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/03/2017-08-03-Stanford-MachineLearning-week1/" itemprop="url">斯坦福机器学习课程 第一周</a></h1>
+                <a class="post-title-link" href="/2017/08/03/Stanford-MachineLearning-week1/" itemprop="url">斯坦福机器学习课程 第一周</a></h1>
         
 
         <div class="post-meta">
@@ -704,7 +822,7 @@
 </blockquote>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/03/2017-08-03-Stanford-MachineLearning-week1/#more" rel="contents">
+            <a class="btn" href="/2017/08/03/Stanford-MachineLearning-week1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -750,7 +868,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/2017-08-03-在Hexo中插入LaTeX数学公式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/在Hexo中插入LaTeX数学公式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="El Chiang">
@@ -769,7 +887,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/03/2017-08-03-在Hexo中插入LaTeX数学公式/" itemprop="url">在Hexo中插入LaTeX数学公式</a></h1>
+                <a class="post-title-link" href="/2017/08/03/在Hexo中插入LaTeX数学公式/" itemprop="url">在Hexo中插入LaTeX数学公式</a></h1>
         
 
         <div class="post-meta">
@@ -820,7 +938,7 @@
           <p>由于最近开始学习机器学习，同时想利用博客做点笔记，并且经常会出现大量数学公式，而原生Hexo并不支持LaTeX公式，但通过一些插件可以解决这个问题，如MathJax。所以本文主要说明如何在Hexo中利用MathJax显示数学公式以及如何解决其中遇到的一些冲突问题。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/08/03/2017-08-03-在Hexo中插入LaTeX数学公式/#more" rel="contents">
+            <a class="btn" href="/2017/08/03/在Hexo中插入LaTeX数学公式/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -866,7 +984,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/29/2017-07-29-Vegenere/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/29/Vegenere/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="El Chiang">
@@ -885,7 +1003,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/29/2017-07-29-Vegenere/" itemprop="url">古典密码学中的维吉尼亚加密及Python算法实现</a></h1>
+                <a class="post-title-link" href="/2017/07/29/Vegenere/" itemprop="url">古典密码学中的维吉尼亚加密及Python算法实现</a></h1>
         
 
         <div class="post-meta">
@@ -939,7 +1057,7 @@
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher" target="_blank" rel="noopener">维吉尼亚密码(Vigenère Cipher)</a>是在单一恺撒密码的基础上扩展出多表代换密码，根据密钥(当密钥长度小于明文长度时可以循环使用)来决定用哪一行的密表来进行替换，以此来对抗字频统计。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/07/29/2017-07-29-Vegenere/#more" rel="contents">
+            <a class="btn" href="/2017/07/29/Vegenere/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1026,7 +1144,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
