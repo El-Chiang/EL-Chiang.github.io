@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="Algorithm," />
 
 
 
@@ -93,18 +93,18 @@
 
 
 
-<meta name="description" content="问题描述Python读入一个文件的数据时经常遇到编码问题。报错如下： 1UnicodeEncodeError: &amp;apos;gbk&amp;apos; codec can&amp;apos;t encode character &amp;apos;\xXX&amp;apos; in position XX: illegal multibyte sequence 解决方案用rb的方式读入Binary，再decode(‘utf-8’">
-<meta name="keywords" content="Python">
+<meta name="description" content="题目  Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  输入一个整型数组num，数组中一个或连续的多个整数组组成一个子数组，求所有子数组的和的最大值。 参考： LeetCo">
+<meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一个关于python3的编码问题">
-<meta property="og:url" content="http://yoursite.com/2017/11/15/2017-11-15-post/index.html">
+<meta property="og:title" content="最大子数组之和">
+<meta property="og:url" content="http://yoursite.com/2018/09/12/最大子数组之和/index.html">
 <meta property="og:site_name" content="|喵|">
-<meta property="og:description" content="问题描述Python读入一个文件的数据时经常遇到编码问题。报错如下： 1UnicodeEncodeError: &amp;apos;gbk&amp;apos; codec can&amp;apos;t encode character &amp;apos;\xXX&amp;apos; in position XX: illegal multibyte sequence 解决方案用rb的方式读入Binary，再decode(‘utf-8’">
+<meta property="og:description" content="题目  Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  输入一个整型数组num，数组中一个或连续的多个整数组组成一个子数组，求所有子数组的和的最大值。 参考： LeetCo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-14T17:35:18.000Z">
+<meta property="og:updated_time" content="2018-09-14T15:02:10.974Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个关于python3的编码问题">
-<meta name="twitter:description" content="问题描述Python读入一个文件的数据时经常遇到编码问题。报错如下： 1UnicodeEncodeError: &amp;apos;gbk&amp;apos; codec can&amp;apos;t encode character &amp;apos;\xXX&amp;apos; in position XX: illegal multibyte sequence 解决方案用rb的方式读入Binary，再decode(‘utf-8’">
+<meta name="twitter:title" content="最大子数组之和">
+<meta name="twitter:description" content="题目  Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.  输入一个整型数组num，数组中一个或连续的多个整数组组成一个子数组，求所有子数组的和的最大值。 参考： LeetCo">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/15/2017-11-15-post/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/12/最大子数组之和/"/>
 
 
 
 
 
-  <title>一个关于python3的编码问题 | |喵|</title>
+  <title>最大子数组之和 | |喵|</title>
   
 
 
@@ -267,7 +267,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/15/2017-11-15-post/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/12/最大子数组之和/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="El Chiang">
@@ -284,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一个关于python3的编码问题</h1>
+          <h1 class="post-title" itemprop="name headline">最大子数组之和</h1>
         
 
         <div class="post-meta">
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-15T01:20:19+08:00">
-                2017-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-12T21:24:41+08:00">
+                2018-09-12
               </time>
             
 
@@ -331,12 +331,30 @@
       
 
       
-        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Python读入一个文件的数据时经常遇到编码问题。报错如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnicodeEncodeError: &apos;gbk&apos; codec can&apos;t encode character &apos;\xXX&apos; in position XX: illegal multibyte sequence</span><br></pre></td></tr></table></figure>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>用<code>rb</code>的方式读入Binary，再decode(‘utf-8’)。</p>
-<p>一个例子，输出<code>afile.txt</code>中的内容</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">filename = <span class="string">"afile.txt"</span></span><br><span class="line"><span class="keyword">with</span> open(filename, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        print(line.decode(<span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure>
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p> Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
+</blockquote>
+<p>输入一个整型数组<code>num</code>，数组中一个或连续的多个整数组组成一个子数组，求所有子数组的和的最大值。</p>
+<p><strong>参考：</strong> <a href="https://leetcode.com/problems/maximum-subarray/description/" target="_blank" rel="noopener">LeetCode 53.Maximum Subarray</a></p>
 <a id="more"></a>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p><strong>Input:</strong> [-2,1,-3,4,-1,2,1,-5,4]</p>
+<p><strong>Output:</strong> 6</p>
+<p><strong>Explanation:</strong> 子数组[4, -1, 2, 1]拥有最大和6</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><h3 id="举例分析数组规律"><a href="#举例分析数组规律" class="headerlink" title="举例分析数组规律"></a>举例分析数组规律</h3><p>首先，因为数组中有正有负，那么最后得到的最大和一定大于0。我们试着对例子中的数组逐个累加：</p>
+<ol>
+<li>初始化和为0</li>
+<li>加上<code>num[0]</code> -2，和为-2</li>
+<li>加上<code>num[1]</code> 1，和为-1，更新最大和为-1</li>
+<li>加上<code>num[2]</code> -3，和为-4，因为-4比之前的最大和还要小，所以把-1保存起来</li>
+<li>加上<code>num[3]</code> 4，和为0。由于之前的最大和为-1，加上4之后得到0比4本身还要小。也就是说从<code>num[0]</code>开始的子数组的和会小于从<code>num[3]</code>开始的子数组的和，因此我们舍弃掉之前的和，直接从<code>num[3]</code>开始累加。</li>
+<li>加上<code>num[4]</code> -1，和为3，我们发现此时的和比之前的4小，因此把之前的和4保存起来，它有可能为最大和</li>
+<li>加上<code>num[5]</code> 2，和为5，大于之前保存的和4，因此更新最大和为5</li>
+<li>加上<code>num[6]</code> 1，和为6，6大于5，同理更新最大和为6</li>
+<li>加上<code>num[7]</code> -5，和为1，因为<code>num[7]</code>小于0，所以和之前一样，将之前的最大和6保存起来</li>
+<li>加上<code>num[8]</code> 4，和为5，这是数组的最后一个元素，而5小于6，因此最终的最大子数组之和为6，对应的子数组为[4, -1, 2, 1]</li>
+</ol>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>以下为<code>Python3</code>的实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        curSum = maxSum = num[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> nums[<span class="number">1</span>:]:</span><br><span class="line">            curSum = max(num, curSum + num)</span><br><span class="line">            maxSum = max(curSum, maxSum)</span><br><span class="line">        <span class="keyword">return</span> maxSum</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -366,7 +384,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
         </div>
       
@@ -379,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/13/2017-11-13-2017-08-29-Stanford-MachineLearning-week6/" rel="next" title="斯坦福机器学习 第六周">
-                <i class="fa fa-chevron-left"></i> 斯坦福机器学习 第六周
+              <a href="/2018/08/26/Algorithm-design-and-analysis-notes/" rel="next" title="【笔记】算法分析与设计">
+                <i class="fa fa-chevron-left"></i> 【笔记】算法分析与设计
               </a>
             
           </div>
@@ -388,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/18/2017-11-18-nippon-colors/" rel="prev" title="日本の伝統色">
-                日本の伝統色 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -464,7 +478,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -477,7 +491,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -532,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example"><span class="nav-number">2.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析"><span class="nav-number">3.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#举例分析数组规律"><span class="nav-number">3.1.</span> <span class="nav-text">举例分析数组规律</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">4.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
             
 
           </div>
