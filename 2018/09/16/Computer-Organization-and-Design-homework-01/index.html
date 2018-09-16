@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="|喵|">
 <meta property="og:description" content="记录计算机组成原理的课后作业 教材为《计算机组成与设计：硬件、软件接口（第4版）》">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-16T11:31:08.772Z">
+<meta property="og:updated_time" content="2018-09-16T11:32:55.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机组成原理 第一章 作业">
 <meta name="twitter:description" content="记录计算机组成原理的课后作业 教材为《计算机组成与设计：硬件、软件接口（第4版）》">
@@ -336,14 +336,11 @@
 </blockquote>
 <a id="more"></a>
 <h2 id="Exercise-1-3"><a href="#Exercise-1-3" class="headerlink" title="Exercise 1.3"></a>Exercise 1.3</h2><ul>
-<li><h3 id="1-3-1"><a href="#1-3-1" class="headerlink" title="1.3.1"></a>1.3.1</h3><p>由CPU Time定义可得，<br>$$<br>CPU~Time = (Instruction~Count) \times (CPI) / (Clock~Rate)<br>$$</p>
+<li><h3 id="1-3-1"><a href="#1-3-1" class="headerlink" title="1.3.1"></a>1.3.1</h3><p>由CPU Time定义可得，<br>$$<br>CPU~Time = (Instruction~Count) \times (CPI) / (Clock~Rate)<br>$$<br>对于P1，$CPU~Time_{p1} = (1 \times 1.5) / (3 \times 10^9) = 0.5 \times 10^{-9}$   </p>
+<p>对于P2，$CPU~Time_{P2} = (1 \times 1.0) / (2.5 \times 10^9) = 0.4 \times 10^{-9}$  </p>
+<p>对于P3，$CPU~Time_{p3} = (1 \times 2.2) / (4 \times 10^9) = 0.55 \times 10^{-9}$  </p>
+<p>因为P2的CPU Time最小，所以<strong>P2的性能最好</strong>。</p>
 </li>
-</ul>
-<p>​    对于P1，$CPU~Time_{p1} = (1 \times 1.5) / (3 \times 10^9) = 0.5 \times 10^{-9}$   </p>
-<p>​    对于P2，$CPU~Time_{P2} = (1 \times 1.0) / (2.5 \times 10^9) = 0.4 \times 10^{-9}$  </p>
-<p>​    对于P3，$CPU~Time_{p3} = (1 \times 2.2) / (4 \times 10^9) = 0.55 \times 10^{-9}$  </p>
-<pre><code>因为P2的CPU Time最小，所以**P2的性能最好**。
-</code></pre><ul>
 <li><h3 id="1-3-2"><a href="#1-3-2" class="headerlink" title="1.3.2"></a>1.3.2</h3><p>$$<br>cycles = time \times Clock~Rate<br>$$</p>
 <p>$$<br>instructions = cycles / CPI<br>$$</p>
 <p>由上式可得，对于a：</p>
