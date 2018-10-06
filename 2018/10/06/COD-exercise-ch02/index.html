@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="|喵|">
 <meta property="og:description" content="记录计算机组成原理的课后作业 教材为《计算机组成与设计：硬件、软件接口（第4版）》（英文版） 写上一次作业的时候发现国外英文版和国内英文版的课后Exercise数据完全不一样…由于学校要求从此章开始全部采用国内英文版的数据。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-06T14:57:07.044Z">
+<meta property="og:updated_time" content="2018-10-06T15:11:29.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机组成原理 第二章 作业">
 <meta name="twitter:description" content="记录计算机组成原理的课后作业 教材为《计算机组成与设计：硬件、软件接口（第4版）》（英文版） 写上一次作业的时候发现国外英文版和国内英文版的课后Exercise数据完全不一样…由于学校要求从此章开始全部采用国内英文版的数据。">
@@ -347,16 +347,12 @@
 <h2 id="Exercise-2-7"><a href="#Exercise-2-7" class="headerlink" title="Exercise 2.7"></a>Exercise 2.7</h2><ul>
 <li><h3 id="2-7-1"><a href="#2-7-1" class="headerlink" title="2.7.1"></a>2.7.1</h3><p><strong>a.</strong> </p>
 <p>按位取反：$0101~0010~1110~1111~1111~1111~1111~1101_{2}$ </p>
-<p>加一：<br>$$<br>\begin{array}{lr}<br>&amp;0101~0010~1110~1111~1111~1111~1111~1101 \</p>
-<ul>
-<li>&amp;1 \<br>\hline<br>= &amp; 0101~0010~1110~1111~1111~1111~1111~1110 \<br>= &amp; ‭1391460350‬_{10}<br>\end{array}<br>$$<br>因为首位为1，所以十进制数为-1391460350</li>
-</ul>
+<p>加一：$0101~0010~1110~1111~1111~1111~1111~1110_{2} = 1391460350‬_{10}$ </p>
+<p>因为首位为1，所以十进制数为-1391460350</p>
 <p><strong>b.</strong>  </p>
 <p>按位取反：$0000~0000~0000~0000~0100~1100~1010~1100_{2}$ </p>
-<p>加一：<br>$$<br>\begin{array}{lr}<br>&amp;0000~0000~0000~0000~0100~1100~1010~1100 \</p>
-<ul>
-<li>&amp;1 \<br>\hline<br>= &amp; 0000~0000~0000~0000~0100~1100~1010~1101 \<br>= &amp; ‭‭19629‬_{10}\end{array}<br>$$<br>因为首位为1，所以十进制数为-‭19629‬</li>
-</ul>
+<p>加一：$0000~0000~0000~0000~0100~1100~1010~1101_{2} = 19629‬_{10}$ </p>
+<p>因为首位为1，所以十进制数为-‭19629‬ </p>
 </li>
 <li><h3 id="2-7-2"><a href="#2-7-2" class="headerlink" title="2.7.2"></a>2.7.2</h3><p><strong>a.</strong> ‭2903506946‬</p>
 <p><strong>b.</strong> ‭4294947667‬ </p>
@@ -386,14 +382,12 @@
 <p>所以转换后的汇编指令为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sw <span class="variable">$t3</span>, 4(<span class="variable">$s0</span>)</span><br></pre></td></tr></table></figure>
 <p><strong>b.</strong> $1000~1101~0000~1000~0000~0000~0100~0000_{2}$ </p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(Bits: 31 28 26  	  	 			   5   2 0)</span><br><span class="line">	   1000 1101 0000 1000 0000 0000 0100 0000</span><br></pre></td></tr></table></figure>
-<p>  当31~29为是100且28~26位是011时，它是<code>lw</code>指令。按照I型指令字段重新排列：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(Bits: 31 28 26  	  	 			 5   2 0)</span><br><span class="line">  	 1000 1101 0000 1000 0000 0000 0100 0000</span><br></pre></td></tr></table></figure>
+<p>当31~29为是100且28~26位是011时，它是<code>lw</code>指令。按照I型指令字段重新排列：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">op	  	rs	 	rt   	address/immediate</span><br><span class="line">100011	01000	01000	0000 0000 0100 0000</span><br></pre></td></tr></table></figure>
-<p>  因为<code>rs=16</code>, <code>rt=16</code> 且 <code>immediate=64</code>，根据查找字段值解码得到<code>rs</code>和<code>rt</code>的寄存器都为<code>$t0</code>，所以转换后的汇编指令为：</p>
+<p> 因为<code>rs=16</code>, <code>rt=16</code> 且 <code>immediate=64</code>，根据查找字段值解码得到<code>rs</code>和<code>rt</code>的寄存器都为<code>$t0</code>，所以转换后的汇编指令为：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lw <span class="variable">$t0</span>, 64(<span class="variable">$t0</span>)</span><br></pre></td></tr></table></figure>
-<ul>
+</li>
 <li><h3 id="2-10-2"><a href="#2-10-2" class="headerlink" title="2.10.2"></a>2.10.2</h3><p>a和b都为I-type</p>
 </li>
 <li><h3 id="2-10-3"><a href="#2-10-3" class="headerlink" title="2.10.3"></a>2.10.3</h3><p><strong>a.</strong> ‭AE0B0004‬</p>
