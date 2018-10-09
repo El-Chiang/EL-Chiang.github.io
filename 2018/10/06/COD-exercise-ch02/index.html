@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="|喵|">
 <meta property="og:description" content="记录计算机组成原理的课后作业 教材为《计算机组成与设计：硬件、软件接口（第4版）》（英文版） 写上一次作业的时候发现国外英文版和国内英文版的课后Exercise数据完全不一样…由于学校要求从此章开始全部采用国内英文版的数据。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-06T15:11:29.838Z">
+<meta property="og:updated_time" content="2018-10-09T08:03:10.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机组成原理 第二章 作业">
 <meta name="twitter:description" content="记录计算机组成原理的课后作业 教材为《计算机组成与设计：硬件、软件接口（第4版）》（英文版） 写上一次作业的时候发现国外英文版和国内英文版的课后Exercise数据完全不一样…由于学校要求从此章开始全部采用国内英文版的数据。">
@@ -346,12 +346,12 @@
 </ul>
 <h2 id="Exercise-2-7"><a href="#Exercise-2-7" class="headerlink" title="Exercise 2.7"></a>Exercise 2.7</h2><ul>
 <li><h3 id="2-7-1"><a href="#2-7-1" class="headerlink" title="2.7.1"></a>2.7.1</h3><p><strong>a.</strong> </p>
-<p>按位取反：$0101~0010~1110~1111~1111~1111~1111~1101_{2}$ </p>
-<p>加一：$0101~0010~1110~1111~1111~1111~1111~1110_{2} = 1391460350‬_{10}$ </p>
+<p>按位取反：$0101~0010~1110~1111~1111~1111~1111~1101_{2}$</p>
+<p>加一：$0101~0010~1110~1111~1111~1111~1111~1110 = 1391460350‬_{10} $</p>
 <p>因为首位为1，所以十进制数为-1391460350</p>
 <p><strong>b.</strong>  </p>
-<p>按位取反：$0000~0000~0000~0000~0100~1100~1010~1100_{2}$ </p>
-<p>加一：$0000~0000~0000~0000~0100~1100~1010~1101_{2} = 19629‬_{10}$ </p>
+<p>按位取反：$0000~0000~0000~0000~0100~1100~1010~1100_{2}$</p>
+<p>加一：$0000~0000~0000~0000~0100~1100~1010~1101 = 19629‬_{10}$ </p>
 <p>因为首位为1，所以十进制数为-‭19629‬ </p>
 </li>
 <li><h3 id="2-7-2"><a href="#2-7-2" class="headerlink" title="2.7.2"></a>2.7.2</h3><p><strong>a.</strong> ‭2903506946‬</p>
@@ -497,9 +497,12 @@
 <li><h3 id="2-25-2"><a href="#2-25-2" class="headerlink" title="2.25.2"></a>2.25.2</h3><p><code>jump</code> 最大范围到0x0FFFFFFC</p>
 <p>所以a和b都不可以</p>
 </li>
-<li><h3 id="2-25-3"><a href="#2-25-3" class="headerlink" title="2.25.3"></a>2.25.3</h3><p>0x604 + 0x1FFFC = 0x0001 0600</p>
-<p>0x604 - 0x20000 = 0xFFFE 0604</p>
-<p>寻址范围是0x0001 0600~0xFFFE 0604</p>
+<li><h3 id="2-25-3"><a href="#2-25-3" class="headerlink" title="2.25.3"></a>2.25.3</h3><blockquote>
+<p>2.25.3和2.25.4没懂为什么要-0x20000(2的17次方)，网上的答案是这么写的。</p>
+</blockquote>
+<p><del>0x604 + 0x1FFFC = 0x0001 0600</del></p>
+<p><del>0x604 - 0x20000 = 0xFFFE 0604</del> </p>
+<p><del>寻址范围是0x0001 0600~0xFFFE 0604</del> </p>
 <p>所以a不可以，b可以</p>
 </li>
 <li><h3 id="2-25-4"><a href="#2-25-4" class="headerlink" title="2.25.4"></a>2.25.4</h3><p>0x400604 + 0x1FFFC = 0x0042 0600</p>
