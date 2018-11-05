@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="喵喵喵" />
+  <meta name="keywords" content="Algorithm," />
 
 
 
@@ -93,17 +93,18 @@
 
 
 
-<meta name="description" content="问题如何用OneDrive自动同步本地文件 解决方案通过以下命令实现同步： 1mklink /J [LOCAL FOLDER PATH FOR ONEDRIVE] [LOCAL FOLDER PATH TO BE SYNCED]">
+<meta name="description" content="LeetCode里的一道easy级别算法题——88. Merge Sorted Array。用python3标准库的sort()函数打败了99%的人。  题目描述Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note: The number of eleme">
+<meta name="keywords" content="Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OneDrive自动同步本地文件">
-<meta property="og:url" content="http://yoursite.com/2017/11/13/OneDrive自动同步本地文件/index.html">
+<meta property="og:title" content="beats-99%-with-STL">
+<meta property="og:url" content="http://yoursite.com/2018/11/05/beats-99-with-STL/index.html">
 <meta property="og:site_name" content="|喵|">
-<meta property="og:description" content="问题如何用OneDrive自动同步本地文件 解决方案通过以下命令实现同步： 1mklink /J [LOCAL FOLDER PATH FOR ONEDRIVE] [LOCAL FOLDER PATH TO BE SYNCED]">
+<meta property="og:description" content="LeetCode里的一道easy级别算法题——88. Merge Sorted Array。用python3标准库的sort()函数打败了99%的人。  题目描述Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note: The number of eleme">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-13T11:44:54.000Z">
+<meta property="og:updated_time" content="2018-11-05T15:15:23.052Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="OneDrive自动同步本地文件">
-<meta name="twitter:description" content="问题如何用OneDrive自动同步本地文件 解决方案通过以下命令实现同步： 1mklink /J [LOCAL FOLDER PATH FOR ONEDRIVE] [LOCAL FOLDER PATH TO BE SYNCED]">
+<meta name="twitter:title" content="beats-99%-with-STL">
+<meta name="twitter:description" content="LeetCode里的一道easy级别算法题——88. Merge Sorted Array。用python3标准库的sort()函数打败了99%的人。  题目描述Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array. Note: The number of eleme">
 
 
 
@@ -131,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/13/OneDrive自动同步本地文件/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/05/beats-99-with-STL/"/>
 
 
 
 
 
-  <title>OneDrive自动同步本地文件 | |喵|</title>
+  <title>beats-99%-with-STL | |喵|</title>
   
 
 
@@ -266,7 +267,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/13/OneDrive自动同步本地文件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/beats-99-with-STL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="El Chiang">
@@ -283,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">OneDrive自动同步本地文件</h1>
+          <h1 class="post-title" itemprop="name headline">beats-99%-with-STL</h1>
         
 
         <div class="post-meta">
@@ -295,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T14:16:28+08:00">
-                2017-11-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-05T23:14:01+08:00">
+                2018-11-05
               </time>
             
 
@@ -330,12 +331,25 @@
       
 
       
-        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>如何用OneDrive自动同步本地文件</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>通过以下命令实现同步：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mklink /J [LOCAL FOLDER PATH FOR ONEDRIVE] [LOCAL FOLDER PATH TO BE SYNCED]</span><br></pre></td></tr></table></figure>
-<a id="more"></a> 
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><h3 id="MKLINK的用法如下："><a href="#MKLINK的用法如下：" class="headerlink" title="MKLINK的用法如下："></a>MKLINK的用法如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MKLINK [[/D] | [/H] | [/J]] Link Target</span><br><span class="line"></span><br><span class="line">        /D      创建目录符号链接。默认为文件</span><br><span class="line">                符号链接。</span><br><span class="line">        /H      创建硬链接，而不是符号链接。</span><br><span class="line">        /J      创建目录联接。</span><br><span class="line">        Link    指定新的符号链接名称。</span><br><span class="line">        Target  指定新链接引用的路径</span><br><span class="line">                (相对或绝对)。</span><br></pre></td></tr></table></figure>
-
+        <blockquote>
+<p><a href="https://leetcode.com" target="_blank" rel="noopener">LeetCode</a>里的一道easy级别算法题——<a href="https://leetcode.com/problems/merge-sorted-array/description/" target="_blank" rel="noopener">88. Merge Sorted Array</a>。用python3标准库的sort()函数打败了99%的人。</p>
+</blockquote>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.</p>
+<p><strong>Note:</strong></p>
+<p>The number of elements initialized in nums1 and nums2 are m and n respectively.</p>
+<p>You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line"></span><br><span class="line">nums1 = [1,2,3,0,0,0], m = 3</span><br><span class="line"></span><br><span class="line">nums2 = [2,5,6], n = 3</span><br><span class="line"></span><br><span class="line">Output: [1,2,2,3,5,6]</span><br></pre></td></tr></table></figure>
+<h2 id="标准库实现"><a href="#标准库实现" class="headerlink" title="标准库实现"></a>标准库实现</h2><p>思路：</p>
+<ol>
+<li>定义<code>curr_index</code>用来表示<code>nums1</code>的下标，初始值为<code>m</code></li>
+<li>遍历数组<code>nums2</code>中的所有元素，将他们依次放入<code>nums1[m]</code>, <code>nums1[m+1]</code>, …即<code>nums1[curr_index]</code></li>
+<li>调用<code>sort()</code>进行排序</li>
+</ol>
+<p>代码如下；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1, m, nums2, n)</span>:</span></span><br><span class="line">        curr_index = m</span><br><span class="line">        <span class="keyword">for</span> elem <span class="keyword">in</span> nums2:</span><br><span class="line">            nums1[curr_index] = elem</span><br><span class="line">            curr_index += <span class="number">1</span></span><br><span class="line">        nums1 = nums1.sort()</span><br></pre></td></tr></table></figure>
+<h2 id="不用标准库实现"><a href="#不用标准库实现" class="headerlink" title="不用标准库实现"></a>不用标准库实现</h2><p>不用标准库也很简单，关键一点就是对各种边界值的判断，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">merge</span><span class="params">(self, nums1, m, nums2, n)</span>:</span></span><br><span class="line">		<span class="keyword">while</span> m &gt; <span class="number">0</span> <span class="keyword">and</span> n &gt; <span class="number">0</span>:</span><br><span class="line">			<span class="keyword">if</span> nums1[m<span class="number">-1</span>] &gt;= nums2[n<span class="number">-1</span>]:</span><br><span class="line">				nums1[m+n<span class="number">-1</span>] = nums1[m<span class="number">-1</span>]</span><br><span class="line">				m -= <span class="number">1</span></span><br><span class="line">			<span class="keyword">else</span>:</span><br><span class="line">				nums1[m+n<span class="number">-1</span>] = nums2[n<span class="number">-1</span>]</span><br><span class="line">		<span class="keyword">if</span> n &gt; <span class="number">0</span>:  <span class="comment"># 如果nums2中还有剩余的元素</span></span><br><span class="line">			nums1[:n] = nums2[:n]</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -362,6 +376,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+          
+        </div>
+      
 
       
       
@@ -371,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/03/小米路由器3折腾记录/" rel="next" title="小米路由器3折腾记录">
-                <i class="fa fa-chevron-left"></i> 小米路由器3折腾记录
+              <a href="/2018/10/06/COD-exercise-ch02/" rel="next" title="计算机组成原理 第二章 作业">
+                <i class="fa fa-chevron-left"></i> 计算机组成原理 第二章 作业
               </a>
             
           </div>
@@ -380,10 +400,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/13/2017-08-29-Stanford-MachineLearning-week6/" rel="prev" title="斯坦福机器学习 第六周">
-                斯坦福机器学习 第六周 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -524,7 +540,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">2.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">3.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MKLINK的用法如下："><span class="nav-number">3.1.</span> <span class="nav-text">MKLINK的用法如下：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准库实现"><span class="nav-number">2.</span> <span class="nav-text">标准库实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不用标准库实现"><span class="nav-number">3.</span> <span class="nav-text">不用标准库实现</span></a></li></ol></div>
             
 
           </div>
