@@ -6,22 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="本文记录如何将校园网客户端 Drcom 刷进小米路由器3以及在路由器中安装科学上网服务。  获取SSH权限升级固件在官网下载小米路由器3开发版ROM并升级。 开启SSH工具在官网获取root密码及工具包  然后按照以下步骤进行：  请将下载的工具包bin文件复制到U盘（FAT&#x2F;FAT32格式）的根目录下，保证文件名为miwifi_ssh.bin； 断开小米路由器的电源，将U盘插入USB接口； 按">
+    <meta name="description" content="本文记录如何将校园网客户端 Drcom 刷进小米路由器3以及在路由器中安装科学上网服务。  获取SSH权限升级固件在官网下载小米路由器3开发版ROM并升级。 开启SSH工具在官网获取root密码及工具包 然后按照以下步骤进行：  请将下载的工具包bin文件复制到U盘（FAT&#x2F;FAT32格式）的根目录下，保证文件名为miwifi_ssh.bin； 断开小米路由器的电源，将U盘插入USB接口； 按住">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小米路由器 3 折腾记录">
 <meta property="og:url" content="http://jing1.moe/2017/09/03/mi-router3-drcom/index.html">
 <meta property="og:site_name" content="Jing1&#39;s Notebook">
-<meta property="og:description" content="本文记录如何将校园网客户端 Drcom 刷进小米路由器3以及在路由器中安装科学上网服务。  获取SSH权限升级固件在官网下载小米路由器3开发版ROM并升级。 开启SSH工具在官网获取root密码及工具包  然后按照以下步骤进行：  请将下载的工具包bin文件复制到U盘（FAT&#x2F;FAT32格式）的根目录下，保证文件名为miwifi_ssh.bin； 断开小米路由器的电源，将U盘插入USB接口； 按">
+<meta property="og:description" content="本文记录如何将校园网客户端 Drcom 刷进小米路由器3以及在路由器中安装科学上网服务。  获取SSH权限升级固件在官网下载小米路由器3开发版ROM并升级。 开启SSH工具在官网获取root密码及工具包 然后按照以下步骤进行：  请将下载的工具包bin文件复制到U盘（FAT&#x2F;FAT32格式）的根目录下，保证文件名为miwifi_ssh.bin； 断开小米路由器的电源，将U盘插入USB接口； 按住">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://blog.jing1.moe/2017/09/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A83%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/001.png">
-<meta property="og:image" content="https://blog.jing1.moe/2017/09/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A83%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/002.png">
-<meta property="og:image" content="https://blog.jing1.moe/2017/09/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A83%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/003.png">
-<meta property="og:image" content="https://blog.jing1.moe/2017/09/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A83%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/004.png">
 <meta property="article:published_time" content="2017-09-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-01-12T19:55:19.945Z">
+<meta property="article:modified_time" content="2020-01-13T12:28:29.500Z">
 <meta property="article:author" content="El Chiang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://blog.jing1.moe/2017/09/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A83%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/001.png">
     
     
         
@@ -156,7 +151,6 @@
 </blockquote>
 <h2 id="获取SSH权限"><a href="#获取SSH权限" class="headerlink" title="获取SSH权限"></a>获取SSH权限</h2><h3 id="升级固件"><a href="#升级固件" class="headerlink" title="升级固件"></a>升级固件</h3><p>在<a href="http://www1.miwifi.com/miwifi_download.html" target="_blank" rel="noopener">官网</a>下载小米路由器3开发版ROM并升级。</p>
 <h3 id="开启SSH工具"><a href="#开启SSH工具" class="headerlink" title="开启SSH工具"></a>开启SSH工具</h3><p>在<a href="http://d.miwifi.com/rom/ssh" target="_blank" rel="noopener">官网</a>获取root密码及工具包</p>
-<p><a href="https://blog.jing1.moe/2017/09/03/小米路由器3折腾记录/001.png" target="_blank" rel="noopener"><img src="https://blog.jing1.moe/2017/09/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A83%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/001.png" alt="img"></a></p>
 <p>然后按照以下步骤进行：</p>
 <ol>
 <li>请将下载的工具包bin文件复制到U盘（FAT/FAT32格式）的根目录下，保证文件名为miwifi_ssh.bin；</li>
@@ -166,7 +160,6 @@
 </ol>
 <h3 id="SSH登陆"><a href="#SSH登陆" class="headerlink" title="SSH登陆"></a>SSH登陆</h3><p>使用 PuTTy 或者 Xshell 连接登陆。</p>
 <p>初始 IP 地址为192.168.31.1，端口 22，用户名 root，密码即为在官网获取的 root 密码。</p>
-<p><a href="https://blog.jing1.moe/2017/09/03/小米路由器3折腾记录/002.png" target="_blank" rel="noopener"><img src="https://blog.jing1.moe/2017/09/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A83%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/002.png" alt="img"></a></p>
 <h2 id="安装-opkg"><a href="#安装-opkg" class="headerlink" title="安装 opkg"></a>安装 opkg</h2><h3 id="提取opkg"><a href="#提取opkg" class="headerlink" title="提取opkg"></a>提取opkg</h3><p>可以直接下载这个提取好的<a href="https://el-chiang.github.io/2017/09/03/小米路由器3折腾记录/opkg" target="_blank" rel="noopener">opkg</a>文件</p>
 <h3 id="修改-etc-opkg-conf文件"><a href="#修改-etc-opkg-conf文件" class="headerlink" title="修改 /etc/opkg.conf文件"></a>修改 <code>/etc/opkg.conf</code>文件</h3><p>替换为以下内容：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">src&#x2F;gz attitude_adjustment_base http:&#x2F;&#x2F;downloads.openwrt.org&#x2F;barrier_breaker&#x2F;14.07&#x2F;ramips&#x2F;mt7620a&#x2F;packages&#x2F;base</span><br><span class="line">src&#x2F;gz attitude_adjustment_packages http:&#x2F;&#x2F;downloads.openwrt.org&#x2F;barrier_breaker&#x2F;14.07&#x2F;ramips&#x2F;mt7620a&#x2F;packages&#x2F;packages&#x2F;</span><br><span class="line">src&#x2F;gz attitude_adjustment_luci http:&#x2F;&#x2F;downloads.openwrt.org&#x2F;barrier_breaker&#x2F;14.07&#x2F;ramips&#x2F;mt7620a&#x2F;packages&#x2F;luci&#x2F;</span><br><span class="line">src&#x2F;gz attitude_adjustment_management http:&#x2F;&#x2F;downloads.openwrt.org&#x2F;barrier_breaker&#x2F;14.07&#x2F;ramips&#x2F;mt7620a&#x2F;packages&#x2F;management&#x2F;</span><br><span class="line">src&#x2F;gz attitude_adjustment_oldpackages http:&#x2F;&#x2F;downloads.openwrt.org&#x2F;barrier_breaker&#x2F;14.07&#x2F;ramips&#x2F;mt7620a&#x2F;packages&#x2F;oldpackages&#x2F;</span><br><span class="line">src&#x2F;gz attitude_adjustment_routing http:&#x2F;&#x2F;downloads.openwrt.org&#x2F;barrier_breaker&#x2F;14.07&#x2F;ramips&#x2F;mt7620a&#x2F;packages&#x2F;routing&#x2F;</span><br><span class="line">src&#x2F;gz openwrt_dist http:&#x2F;&#x2F;openwrt-dist.sourceforge.net&#x2F;releases&#x2F;ramips&#x2F;packages</span><br><span class="line">src&#x2F;gz openwrt_dist_luci http:&#x2F;&#x2F;openwrt-dist.sourceforge.net&#x2F;releases&#x2F;luci&#x2F;packages</span><br><span class="line">dest root &#x2F;data</span><br><span class="line">dest ram &#x2F;tmp</span><br><span class="line">lists_dir ext &#x2F;data&#x2F;var&#x2F;opkg-lists</span><br><span class="line">option overlay_root &#x2F;data</span><br><span class="line">arch all 100</span><br><span class="line">arch ramips 200</span><br><span class="line">arch ramips_24kec 300</span><br></pre></td></tr></table></figure>
@@ -213,7 +206,6 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://www.misstar.com/tools/appstore/install.sh -O /tmp/install.sh &amp;&amp; chmod +x /tmp/install.sh &amp;&amp; /tmp/install.sh</span><br></pre></td></tr></table></figure>
 
 <p>之后登陆 <a href="https://blog.jing1.moe/2017/09/03/小米路由器3折腾记录/192.168.31.1" target="_blank" rel="noopener">192.168.31.1</a> 刷新网页就能看到了。</p>
-<p><a href="https://blog.jing1.moe/2017/09/03/小米路由器3折腾记录/003.png" target="_blank" rel="noopener"><img src="https://blog.jing1.moe/2017/09/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A83%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/003.png" alt="img"></a><a href="https://blog.jing1.moe/2017/09/03/小米路由器3折腾记录/004.png" target="_blank" rel="noopener"><img src="https://blog.jing1.moe/2017/09/03/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A83%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/004.png" alt="img"></a></p>
 <p>在插件管理中安装 SS，之后填入节点并连接就能使用路由器翻墙啦。</p>
 
   </div>
