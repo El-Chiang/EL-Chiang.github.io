@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="由于最近开始学习机器学习，同时想利用博客做点笔记，并且经常会出现大量数学公式，而原生 Hexo 并不支持 LaTeX 公式，但通过一些插件可以解决这个问题，如 MathJax。所以本文主要说明如何在 Hexo 中利用 MathJax 显示数学公式以及如何解决其中遇到的一些冲突问题。  插件安装安装方法如下： 1$ npm install hexo-math --save  执行： 1$ hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 Hexo 中插入 LaTeX 数学公式">
+<meta property="og:url" content="http://jing1.moe/2017/08/03/latex-in-hexo/index.html">
+<meta property="og:site_name" content="Jing1&#39;s Notebook">
+<meta property="og:description" content="由于最近开始学习机器学习，同时想利用博客做点笔记，并且经常会出现大量数学公式，而原生 Hexo 并不支持 LaTeX 公式，但通过一些插件可以解决这个问题，如 MathJax。所以本文主要说明如何在 Hexo 中利用 MathJax 显示数学公式以及如何解决其中遇到的一些冲突问题。  插件安装安装方法如下： 1$ npm install hexo-math --save  执行： 1$ hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-08-02T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-01-12T19:47:01.800Z">
+<meta property="article:author" content="El Chiang">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="LaTeX">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>在 Hexo 中插入 LaTeX 数学公式</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="Jing1&#39;s Notebook" type="application/atom+xml" />
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/09/03/mi-router3-drcom/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jing1.moe/2017/08/03/latex-in-hexo/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jing1.moe/2017/08/03/latex-in-hexo/&text=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jing1.moe/2017/08/03/latex-in-hexo/&title=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jing1.moe/2017/08/03/latex-in-hexo/&is_video=false&description=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=在 Hexo 中插入 LaTeX 数学公式&body=Check out this article: http://jing1.moe/2017/08/03/latex-in-hexo/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jing1.moe/2017/08/03/latex-in-hexo/&title=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jing1.moe/2017/08/03/latex-in-hexo/&title=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jing1.moe/2017/08/03/latex-in-hexo/&title=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jing1.moe/2017/08/03/latex-in-hexo/&title=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jing1.moe/2017/08/03/latex-in-hexo/&name=在 Hexo 中插入 LaTeX 数学公式&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://jing1.moe/2017/08/03/latex-in-hexo/&t=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件安装"><span class="toc-number">1.</span> <span class="toc-text">插件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-MathJax-插入数学公式"><span class="toc-number">2.</span> <span class="toc-text">使用 MathJax 插入数学公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决-Hexo-与-LaTeX-语法冲突问题"><span class="toc-number">3.</span> <span class="toc-text">解决 Hexo 与 LaTeX 语法冲突问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题描述："><span class="toc-number">3.1.</span> <span class="toc-text">问题描述：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法："><span class="toc-number">3.2.</span> <span class="toc-text">解决方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试效果"><span class="toc-number">3.3.</span> <span class="toc-text">测试效果</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        在 Hexo 中插入 LaTeX 数学公式
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Jing1's Notebook</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2017-08-02T16:00:00.000Z" itemprop="datePublished">2017-08-03</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Hexo/" rel="tag">Hexo</a>, <a class="tag-link" href="/tags/LaTeX/" rel="tag">LaTeX</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>由于最近开始学习机器学习，同时想利用博客做点笔记，并且经常会出现大量数学公式，而原生 Hexo 并不支持 LaTeX 公式，但通过一些插件可以解决这个问题，如 MathJax。所以本文主要说明如何在 Hexo 中利用 MathJax 显示数学公式以及如何解决其中遇到的一些冲突问题。</p>
+</blockquote>
+<h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><p>安装方法如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-math --save</span></span><br></pre></td></tr></table></figure>
+
+<p>执行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo math install</span></span><br></pre></td></tr></table></figure>
+
+<p>在 <code>_config.yml</code> 中添加：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="string">hexo-math</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>另外，有些 Hexo 主题是自带 MathJax 的，如本站使用的主题 NexT。这样的话就简单了，只需要在主题配置文件 <code>_config.yml</code> 中找到 <code>Third Party Services Settings</code> ，将 <code>false</code> 改为 <code>ture</code>。如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mathjax:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">cdn:</span> <span class="string">//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTM</span></span><br></pre></td></tr></table></figure>
+
+<p>之后就可以在 markdown 中插入 LaTeX 数学公式了。</p>
+<h2 id="使用-MathJax-插入数学公式"><a href="#使用-MathJax-插入数学公式" class="headerlink" title="使用 MathJax 插入数学公式"></a>使用 MathJax 插入数学公式</h2><p>具体用法请见 <a href="http://catx.me/2014/03/09/hexo-mathjax-plugin/" target="_blank" rel="noopener">Hexo MathJax 插件</a>。</p>
+<h2 id="解决-Hexo-与-LaTeX-语法冲突问题"><a href="#解决-Hexo-与-LaTeX-语法冲突问题" class="headerlink" title="解决 Hexo 与 LaTeX 语法冲突问题"></a>解决 Hexo 与 LaTeX 语法冲突问题</h2><h3 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h3><p>有些时候会出现无法正确渲染的问题，原因是当遇到某些特殊符号时，如 <code>\</code> 或者 <code>_</code>，转 HTML 文件中优先按 Markdown 语法处理，导致 MathJax 无法得到正确的 LaTeX 语句。</p>
+<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p>找到 <code>/node_modules/marked/lib/</code> 中的 <code>marked.js</code> 作如下修改：</p>
+<ol>
+<li><p>修改 escape</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># escape: /^\\([\\`*&#123;&#125;\[\]()# +\-.!_&gt;])/,</span><br><span class="line"><span class="built_in">escape</span>: <span class="regexp">/^\\([`*\[\]()#+\-._&gt;])/</span>,</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 em</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">em:<span class="regexp">/^\*((?:\*\*|[\s\S])+?)\*(?!\*)/</span>,</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>这样就取消了对某些特殊字符的转义。</p>
+<h3 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\int_&#123;0&#125;^&#123;\frac&#123;\pi&#125;&#123;2&#125;&#125;dxdy$</span><br></pre></td></tr></table></figure>
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插件安装"><span class="toc-number">1.</span> <span class="toc-text">插件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-MathJax-插入数学公式"><span class="toc-number">2.</span> <span class="toc-text">使用 MathJax 插入数学公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决-Hexo-与-LaTeX-语法冲突问题"><span class="toc-number">3.</span> <span class="toc-text">解决 Hexo 与 LaTeX 语法冲突问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题描述："><span class="toc-number">3.1.</span> <span class="toc-text">问题描述：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法："><span class="toc-number">3.2.</span> <span class="toc-text">解决方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试效果"><span class="toc-number">3.3.</span> <span class="toc-text">测试效果</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://jing1.moe/2017/08/03/latex-in-hexo/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://jing1.moe/2017/08/03/latex-in-hexo/&text=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://jing1.moe/2017/08/03/latex-in-hexo/&title=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://jing1.moe/2017/08/03/latex-in-hexo/&is_video=false&description=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=在 Hexo 中插入 LaTeX 数学公式&body=Check out this article: http://jing1.moe/2017/08/03/latex-in-hexo/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://jing1.moe/2017/08/03/latex-in-hexo/&title=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://jing1.moe/2017/08/03/latex-in-hexo/&title=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://jing1.moe/2017/08/03/latex-in-hexo/&title=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://jing1.moe/2017/08/03/latex-in-hexo/&title=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://jing1.moe/2017/08/03/latex-in-hexo/&name=在 Hexo 中插入 LaTeX 数学公式&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://jing1.moe/2017/08/03/latex-in-hexo/&t=在 Hexo 中插入 LaTeX 数学公式" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 El Chiang
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/about/">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
